@@ -1,4 +1,4 @@
-import React,{Component} from 'react';
+import React from 'react';
 import Slider from "react-slick";
 
 const memberList = [
@@ -46,8 +46,7 @@ const memberList = [
     },
 ]
 
-class Friendsilder extends Component {
-    render() {
+const Friendsilder=()=> {
         const friendsettings = {
             arrows: false,
             dots: false,
@@ -72,7 +71,6 @@ class Friendsilder extends Component {
                 ))}
             </Slider>
         );
-    }
 }
 
 export default Friendsilder;

@@ -1,8 +1,7 @@
-import React,{Component} from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
-class Appfooter extends Component {
-    render() {
+const Appfooter =()=> {
         return (
             <div className="app-footer border-0 shadow-lg bg-primary-gradiant">
                 <Link to="/home" className="nav-content-bttn nav-center"><i className="feather-home"></i></Link>
@@ -12,7 +11,6 @@ class Appfooter extends Component {
                 <Link to="/defaultsettings" className="nav-content-bttn"><img src="assets/images/female-profile.png" alt="user" className="w30 shadow-xss" /></Link>
             </div>        
         );
-    }
 }
 
 export default Appfooter;

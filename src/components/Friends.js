@@ -1,4 +1,4 @@
-import React,{Component} from 'react';
+import React from 'react';
 
 const friendList = [
     {
@@ -18,8 +18,7 @@ const friendList = [
     },
 ]
 
-class Friends extends Component {
-    render() {
+const Friends =()=> {
         return (
             <div className="card w-100 shadow-xss rounded-xxl border-0 mb-3">
                 <div className="card-body d-flex align-items-center p-4">
@@ -43,7 +42,6 @@ class Friends extends Component {
                 
             </div>
         );
-    }
 }
 
 export default Friends;

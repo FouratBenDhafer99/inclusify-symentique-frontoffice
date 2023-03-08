@@ -1,11 +1,9 @@
-import React,{Component} from 'react';
+import React from 'react';
 
-class Popupchat extends Component {
-    render() {
-        return (
-            <div></div>     
-        );
-    }
+const Popupchat = () => {
+    return (
+        <div></div>
+    );
 }
 
 export default Popupchat;

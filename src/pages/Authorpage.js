@@ -1,4 +1,4 @@
-import React, { Component , Fragment } from "react";
+import React, { Fragment } from "react";
 import Header from '../components/Header';
 import Leftnav from '../components/Leftnav';
 import Rightchat from '../components/Rightchat';
@@ -14,8 +14,7 @@ import Postview from '../components/Postview';
 import Load from '../components/Load';
 
 
-class Authorpage extends Component {
-    render() {
+const Authorpage =()=> {
         return (
             <Fragment> 
                 <Header />
@@ -51,7 +50,6 @@ class Authorpage extends Component {
 
             </Fragment>
         );
-    }
 }
 
 export default Authorpage;
