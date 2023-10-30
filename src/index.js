@@ -10,6 +10,9 @@ import Load from "./components/Load";
 
 const SkillList = React.lazy(() => import("./pages/skill/SkillList"));
 const JobList = React.lazy(() => import("./pages/Job"));
+const QuestionList = React.lazy(() => import("./pages/skill/QuestionList"));
+const AnswerList = React.lazy(() => import("./pages/skill/AnswerList"));
+
 class Root extends Component {
     render() {
         return (
@@ -18,6 +21,8 @@ class Root extends Component {
                     <Routes>
                         <Route path={`/skills`} element={<SkillList/>}/>
                         <Route path={`/jobs`} element={<JobList/>}/>
+                        <Route path={`/questions`} element={<QuestionList/>}/>
+                        <Route path={`/answers`} element={<AnswerList/>}/>
 
                     </Routes>
                 </Suspense>
