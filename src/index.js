@@ -9,7 +9,7 @@ import * as serviceWorker from './serviceWorker';
 import Load from "./components/Load";
 
 const SkillList = React.lazy(() => import("./pages/skill/SkillList"));
-
+const JobList = React.lazy(() => import("./pages/Job"));
 class Root extends Component {
     render() {
         return (
@@ -17,6 +17,7 @@ class Root extends Component {
                 <Suspense fallback={<Load/>}>
                     <Routes>
                         <Route path={`/skills`} element={<SkillList/>}/>
+                        <Route path={`/jobs`} element={<JobList/>}/>
 
                     </Routes>
                 </Suspense>
