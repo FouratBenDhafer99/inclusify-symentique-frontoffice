@@ -7,8 +7,8 @@ import eventAPI from "../../api/eventAPI";
 const EventList = () => {
 
     const [events, setEvents] = useState([])
-    const fn = async (categoryEvent = "", regexParam = "", orderBy = "", orderType = "") => {
-        await eventAPI.getEvents(categoryEvent, regexParam, orderBy, orderType).then(res => {
+    const fn = async (categoryEvent = "",userName = "", regexParam = "", orderBy = "", orderType = "") => {
+        await eventAPI.getEvents(categoryEvent, userName, regexParam, orderBy, orderType).then(res => {
             console.log(res)
             setEvents(res)
         })
@@ -56,6 +56,9 @@ const EventList = () => {
                                         <th className="border-0 p-4 col-5" onClick={() => handleSortBy("title")}>Title
                                         </th>
                                         <th className="border-0 p-4 col-7"
+                                            onClick={() => handleSortBy("userName")}>Organizer
+                                        </th>
+                                        <th className="border-0 p-4 col-7"
                                             onClick={() => handleSortBy("categoryEvent")}>CategoryEvent
                                         </th>
                                     </tr>
@@ -64,6 +67,7 @@ const EventList = () => {
                                     {events?.map((item, index) => (
                                         <tr key={index}>
                                             <td className="product-headline  wide-column text-grey-900 fw-600 font-xsss">{item.title}</td>
+                                            <td className="product-headline  wide-column text-grey-900 fw-600 font-xsss">{item.userName}</td>
                                             <td className="product-headline  wide-column text-grey-900 fw-600 font-xsss">{item.categoryEvent}</td>
                                         </tr>
                                     ))}
@@ -73,6 +77,8 @@ const EventList = () => {
                         </div>
                     </div>
                 </div>
+
+
             </div>
         </Fragment>
     )
