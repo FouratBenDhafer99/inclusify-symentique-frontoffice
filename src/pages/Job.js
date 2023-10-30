@@ -82,7 +82,7 @@ const Job= ()=> {
                     <div className="middle-sidebar-bottom "style={{maxWidth: "100%"}}>
                         <div className="middle-sidebar-left pe-0" style={{maxWidth: "100%"}}>
                             <div className="row w-full">
-                                <div className="col-xl-6 chat-left scroll-bar w-full">
+                                <div className="col-xl-12 chat-left scroll-bar w-full">
                                 <div className="card shadow-xss w-100 d-block d-flex border-0 p-4 mb-3">
                                      <h2 className="fw-700 mb-0 mt-0 font-md text-grey-900 d-flex align-items-center">Jobs
                                         <form action="#" className="pt-0 pb-0 ms-auto row">
@@ -127,19 +127,20 @@ const Job= ()=> {
                                                     <>
                                                     <div>
                                                         <label>
-                                                            <input
+                                                            
+                                                            <h6>search by description</h6>
+                                                        </label> 
+                                                        <input
                                                             type="checkbox"
                                                             checked={isRadioChecked}
                                                             onChange={handleRadioChange}
                                                             />
-                                                            <h6>search by description</h6>
-                                                        </label> 
                                                     </div> 
                                                     </> 
                                             </div>
                                             <div className="search-form-2 ms-2 col">
                                                     <>
-                                                        <button className="btn btn-primary" onClick={handleClick}>Search</button>
+                                                        <button className="btn btn-primary" onClick={handleClick}>Submit</button>
                                                     </>
                                             </div>
                                         </form>
