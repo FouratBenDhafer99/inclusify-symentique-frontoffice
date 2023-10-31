@@ -1,33 +1,34 @@
-import React, {Component, Suspense} from 'react';
-import ReactDOM from 'react-dom';
+import React, { Component, Suspense } from "react";
+import ReactDOM from "react-dom";
 
+import "./main.scss";
 
-import './main.scss';
-
-import {BrowserRouter, Route, Routes} from 'react-router-dom';
-import * as serviceWorker from './serviceWorker';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import * as serviceWorker from "./serviceWorker";
 import Load from "./components/Load";
+import Postview from "./components/Postview";
+import Home from "./pages/Home";
 
 const SkillList = React.lazy(() => import("./pages/skill/SkillList"));
 const QuestionList = React.lazy(() => import("./pages/skill/QuestionList"));
 const AnswerList = React.lazy(() => import("./pages/skill/AnswerList"));
 
 class Root extends Component {
-    render() {
-        return (
-            <BrowserRouter basename={'/'}>
-                <Suspense fallback={<Load/>}>
-                    <Routes>
-                        <Route path={`/skills`} element={<SkillList/>}/>
-                        <Route path={`/questions`} element={<QuestionList/>}/>
-                        <Route path={`/answers`} element={<AnswerList/>}/>
-
-                    </Routes>
-                </Suspense>
-            </BrowserRouter>
-        )
-    }
+  render() {
+    return (
+      <BrowserRouter basename={"/"}>
+        <Suspense fallback={<Load />}>
+          <Routes>
+            <Route path={`/skills`} element={<SkillList />} />
+            <Route path={`/questions`} element={<QuestionList />} />
+            <Route path={`/answers`} element={<AnswerList />} />
+            <Route path={`/posts`} element={<Home />} />
+          </Routes>
+        </Suspense>
+      </BrowserRouter>
+    );
+  }
 }
 
-ReactDOM.render(<Root/>, document.getElementById('root'));
+ReactDOM.render(<Root />, document.getElementById("root"));
 serviceWorker.register();
