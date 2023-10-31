@@ -1,5 +1,5 @@
-import React, {Component, Suspense} from 'react';
-import ReactDOM from 'react-dom';
+import React, { Component, Suspense } from "react";
+import ReactDOM from "react-dom";
 
 import './main.scss';
 
@@ -7,6 +7,7 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
 import Load from "./components/Load";
 import ProductList from './pages/product/ProductList';
+import Postview from "./components/Postview";
 
 const SkillList = React.lazy(() => import("./pages/skill/SkillList"));
 const EventList = React.lazy(() => import("./pages/event/EventList"));
@@ -28,6 +29,7 @@ class Root extends Component {
                         <Route path={`/products`} element={<ProductList />} />
                         <Route path={`/answers`} element={<AnswerList/>}/>
                         <Route path={`/quizzes`} element={<QuizList/>}/>
+                        <Route path={`/posts`} element={<Home />} />
                     </Routes>
                 </Suspense>
             </BrowserRouter>
@@ -35,5 +37,5 @@ class Root extends Component {
     }
 }
 
-ReactDOM.render(<Root/>, document.getElementById('root'));
+ReactDOM.render(<Root />, document.getElementById("root"));
 serviceWorker.register();
