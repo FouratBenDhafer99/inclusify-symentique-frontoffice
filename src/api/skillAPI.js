@@ -20,6 +20,7 @@ const getQuestions = async (score = "", regexParam = "", orderBy = "", orderType
         console.log(error.response.data);
     }
 }
+
 const getAnswers = async (isCorrect = "", regexParam = "", orderBy = "", orderType = "") => {
     try {
         console.log(orderBy)
@@ -31,4 +32,15 @@ const getAnswers = async (isCorrect = "", regexParam = "", orderBy = "", orderTy
     }
 }
 
-export default {getSkills, getQuestions, getAnswers}
+const QuizList = async (regexParam = "", orderBy = "", orderType = "") => {
+    try {
+        console.log(orderBy)
+        const response = await axios.get(url + "quizzes", {params: {regexParam, orderBy, orderType}});
+        console.log(response);
+        return response.data;
+    } catch (error) {
+        console.log(error.response.data);
+    }
+}
+
+export default {getSkills, getQuestions, getAnswers, QuizList}
