@@ -8,6 +8,7 @@ import * as serviceWorker from './serviceWorker';
 import Load from "./components/Load";
 import ProductList from './pages/product/ProductList';
 import Postview from "./components/Postview";
+import Home from "./pages/Home";
 
 const SkillList = React.lazy(() => import("./pages/skill/SkillList"));
 const EventList = React.lazy(() => import("./pages/event/EventList"));

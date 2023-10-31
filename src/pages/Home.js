@@ -21,6 +21,7 @@ import PostPagetitle from "../components/PostPageTitle";
 
 const Home = () => {
   const [posts, setPosts] = useState(null);
+
   const [PostType, setPostType] = useState(null);
   const [regexParam, setRegexParam] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -43,6 +44,7 @@ const Home = () => {
     setPosts(allPosts);
     setIsLoading(false);
   }
+
   useEffect(() => {
     fetchPosts().then(() => {
       console.log("all posts fetched");

@@ -26,9 +26,7 @@ const getComments = async (
 ) => {
   try {
     console.log(orderBy);
-    const response = await axios.get(url + "comment", {
-      params: { score, regexParam, orderBy, orderType },
-    });
+    const response = await axios.get(url + "comments");
     console.log(response);
     return response.data;
   } catch (error) {
