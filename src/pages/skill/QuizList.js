@@ -4,13 +4,13 @@ import Pagetitle from "../../components/Pagetitle";
 import React, {Fragment, useEffect, useState} from "react";
 import skillAPI from "../../api/skillAPI";
 
-const AnswerList = () => {
+const QuizList = () => {
 
-    const [answers, setAnswers] = useState([])
-    const fn = async (isCorrect = "", regexParam = "", orderBy = "", orderType = "") => {
-        await skillAPI.getAnswers(isCorrect, regexParam, orderBy, orderType).then(res => {
+    const [quizzes, setQuizzes] = useState([])
+    const fn = async ( regexParam = "", orderBy = "", orderType = "") => {
+        await skillAPI.QuizList(regexParam, orderBy, orderType).then(res => {
             console.log(res)
-            setAnswers(res)
+            setQuizzes(res)
         })
     }
 
@@ -20,24 +20,19 @@ const AnswerList = () => {
 
     const [orderType, setOrderType] = useState("")
     const [orderBy, setOrderBy] = useState("")
-    const [isCorrect, setIsCorrect] = useState("")
     const [regexParam, setRegexParam] = useState("")
 
     const handleSortBy = async (field) => {
         console.log(field)
-        fn(isCorrect, regexParam, field, orderBy === field ? orderType === "desc" ? "asc" : "desc" : "asc")
+        fn( regexParam, field, orderBy === field ? orderType === "desc" ? "asc" : "desc" : "asc")
         setOrderBy(field)
         setOrderType(orderBy === field ? orderType === "desc" ? "asc" : "desc" : "asc")
     }
 
-    const handleSearchByIsCorrect = async (e) => {
-        setIsCorrect(e.target.value)
-        fn(e.target.value, regexParam, orderBy, orderType)
-    }
 
     const handleSearchByDescription = async (e) => {
         setRegexParam(e.target.value)
-        fn(isCorrect, e.target.value, orderBy, orderType)
+        fn( e.target.value, orderBy, orderType)
     }
 
     return (
@@ -47,28 +42,32 @@ const AnswerList = () => {
                 <div className="middle-sidebar-bottom">
                     <div className="middle-sidebar-left pe-0">
                         <div className="row">
-                            <Pagetitle title="Answers" searchByInputFunction={handleSearchByDescription} searchBySelectOptions={['true', 'false']} searchBySelectFunction={handleSearchByIsCorrect} />
+                            <Pagetitle title="Quizzes" searchByInputFunction={handleSearchByDescription} />
                             <div className="table-content table-responsive">
                                 <table className="table table-hover text-center">
                                     <thead className="bg-greyblue rounded-3">
                                     <tr>
                                         <th className="border-0 p-4 col-5"
-                                            onClick={() => handleSortBy("answerDescription")}>Answer
+                                            onClick={() => handleSortBy("userName")}>Player
                                         </th>
                                         <th className="border-0 p-4 col-5"
-                                            onClick={() => handleSortBy("is_correct")}>Is Correct
+                                            onClick={() => handleSortBy("skillName")}>Skill
                                         </th>
                                         <th className="border-0 p-4 col-7"
-                                            onClick={() => handleSortBy("questionDescription")}>Question
+                                            onClick={() => handleSortBy("score")}>Score
+                                        </th>
+                                        <th className="border-0 p-4 col-7"
+                                            onClick={() => handleSortBy("playedAt")}>Played at
                                         </th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    {answers?.map((answer, index) => (
+                                    {quizzes?.map((quiz, index) => (
                                         <tr key={index}>
-                                            <td className="product-headline  wide-column text-grey-900 fw-600 font-xsss">{answer.answerDescription}</td>
-                                            <td className="product-headline  wide-column text-grey-900 fw-600 font-xsss">{answer.is_correct}</td>
-                                            <td className="product-headline  wide-column text-grey-900 fw-600 font-xsss">{answer.questionDescription}</td>
+                                            <td className="product-headline  wide-column text-grey-900 fw-600 font-xsss">{quiz.userName}</td>
+                                            <td className="product-headline  wide-column text-grey-900 fw-600 font-xsss">{quiz.skillName}</td>
+                                            <td className="product-headline  wide-column text-grey-900 fw-600 font-xsss">{quiz.score}</td>
+                                            <td className="product-headline  wide-column text-grey-900 fw-600 font-xsss">{quiz.playedAt}</td>
                                         </tr>
                                     ))}
                                     </tbody>
@@ -82,4 +81,4 @@ const AnswerList = () => {
     )
 }
 
-export default AnswerList
+export default QuizList
