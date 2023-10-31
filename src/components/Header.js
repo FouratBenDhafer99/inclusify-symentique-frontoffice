@@ -89,9 +89,24 @@ class Header extends Component {
                                 <div className="nav-caption fw-600 font-xssss text-grey-500">Jobs</div>
                                 <ul className="mb-1 top-content">
                                     <li className="logo d-none d-xl-block d-lg-block"></li>
-                                    <li><Link to="/skills" className="nav-content-bttn open-font"><i className="feather-briefcase btn-round-md bg-red-gradiant me-3"></i><span>Jobs</span></Link></li>
+                                    <li><Link to="/jobs" className="nav-content-bttn open-font"><i className="feather-briefcase btn-round-md bg-red-gradiant me-3"></i><span>Jobs</span></Link></li>
                                 </ul>
                             </div>
+                            <div className="nav-wrap bg-white bg-transparent-card rounded-xxl shadow-xss pt-3 pb-1 mb-2 mt-2">
+                                <div className="nav-caption fw-600 font-xssss text-grey-500">Events</div>
+                                <ul className="mb-1 top-content">
+                                    <li className="logo d-none d-xl-block d-lg-block"></li>
+                                    <li><Link to="/events" className="nav-content-bttn open-font"><i className="feather-calendar btn-round-md bg-gold-gradiant me-3"></i><span>Events</span></Link></li>
+                                </ul>
+                            </div>
+                            <div className="nav-wrap bg-white bg-transparent-card rounded-xxl shadow-xss pt-3 pb-1 mb-2 mt-2">
+                                <div className="nav-caption fw-600 font-xssss text-grey-500">Products</div>
+                                <ul className="mb-1 top-content">
+                                    <li className="logo d-none d-xl-block d-lg-block"></li>
+                                    <li><Link to="/products" className="nav-content-bttn open-font"><i className="feather-shopping-cart btn-round-md bg-primary-gradiant me-3"></i><span>Products</span></Link></li>
+                                </ul>
+                            </div>
+
 
                         </div>
                     </div>
