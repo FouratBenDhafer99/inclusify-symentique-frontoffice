@@ -20,6 +20,7 @@ const getQuestions = async (score = "", regexParam = "", orderBy = "", orderType
         console.log(error.response.data);
     }
 }
+
 const getAnswers = async (isCorrect = "", regexParam = "", orderBy = "", orderType = "") => {
     try {
         console.log(orderBy)

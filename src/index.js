@@ -7,6 +7,7 @@ import './main.scss';
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
 import Load from "./components/Load";
+import ProductList from './pages/product/ProductList';
 
 const SkillList = React.lazy(() => import("./pages/skill/SkillList"));
 const JobList = React.lazy(() => import("./pages/Job"));
@@ -23,9 +24,9 @@ class Root extends Component {
                         <Route path={`/skills`} element={<SkillList/>}/>
                         <Route path={`/jobs`} element={<JobList/>}/>
                         <Route path={`/questions`} element={<QuestionList/>}/>
+                        <Route path={`/products`} element={<ProductList />} />
                         <Route path={`/answers`} element={<AnswerList/>}/>
                         <Route path={`/quizzes`} element={<QuizList/>}/>
-
                     </Routes>
                 </Suspense>
             </BrowserRouter>
