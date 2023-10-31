@@ -83,7 +83,7 @@ class Header extends Component {
                                     <li><Link to="/skills" className="nav-content-bttn open-font"><i className="feather-award btn-round-md bg-red-gradiant me-3"></i><span>Skills</span></Link></li>
                                     <li><Link to="/questions" className="nav-content-bttn open-font"><i className="feather-globe btn-round-md bg-gold-gradiant me-3"></i><span>Questions</span></Link></li>
                                     <li><Link to="/answers" className="nav-content-bttn open-font"><i className="feather-zap btn-round-md bg-mini-gradiant me-3"></i><span>Answers</span></Link></li>
-                                    <li><Link to="/userpage" className="nav-content-bttn open-font"><i className="feather-user btn-round-md bg-primary-gradiant me-3"></i><span>Author Profile </span></Link></li>                        
+                                    <li><Link to="/quizzes" className="nav-content-bttn open-font"><i className="feather-user btn-round-md bg-primary-gradiant me-3"></i><span>Quizzes </span></Link></li>
                                 </ul>
                             </div>
 
