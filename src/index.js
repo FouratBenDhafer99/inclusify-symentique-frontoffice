@@ -14,7 +14,9 @@ const EventList = React.lazy(() => import("./pages/event/EventList"));
 const JobList = React.lazy(() => import("./pages/Job"));
 const QuestionList = React.lazy(() => import("./pages/skill/QuestionList"));
 const AnswerList = React.lazy(() => import("./pages/skill/AnswerList"));
+const UserList = React.lazy(() => import("./pages/UserList"));
 const QuizList = React.lazy(() => import("./pages/skill/QuizList"));
+const Home = React.lazy(() => import("./pages/Home"));
 
 class Root extends Component {
     render() {
@@ -28,6 +30,8 @@ class Root extends Component {
                         <Route path={`/questions`} element={<QuestionList/>}/>
                         <Route path={`/products`} element={<ProductList />} />
                         <Route path={`/answers`} element={<AnswerList/>}/>
+                        <Route path={`/users`} element={<UserList/>}/>
+
                         <Route path={`/quizzes`} element={<QuizList/>}/>
                         <Route path={`/posts`} element={<Home />} />
                     </Routes>
