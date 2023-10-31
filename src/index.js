@@ -6,9 +6,14 @@ import './main.scss';
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
 import Load from "./components/Load";
+import ProductList from './pages/product/ProductList';
 
 const SkillList = React.lazy(() => import("./pages/skill/SkillList"));
 const EventList = React.lazy(() => import("./pages/event/EventList"));
+const JobList = React.lazy(() => import("./pages/Job"));
+const QuestionList = React.lazy(() => import("./pages/skill/QuestionList"));
+const AnswerList = React.lazy(() => import("./pages/skill/AnswerList"));
+const QuizList = React.lazy(() => import("./pages/skill/QuizList"));
 
 class Root extends Component {
     render() {
@@ -18,6 +23,11 @@ class Root extends Component {
                     <Routes>
                         <Route path={`/skills`} element={<SkillList/>}/>
                         <Route path={`/events`} element={<EventList/>}/>
+                        <Route path={`/jobs`} element={<JobList/>}/>
+                        <Route path={`/questions`} element={<QuestionList/>}/>
+                        <Route path={`/products`} element={<ProductList />} />
+                        <Route path={`/answers`} element={<AnswerList/>}/>
+                        <Route path={`/quizzes`} element={<QuizList/>}/>
                     </Routes>
                 </Suspense>
             </BrowserRouter>
