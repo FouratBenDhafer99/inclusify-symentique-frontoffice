@@ -93,7 +93,7 @@ const Job= ()=> {
                                                         <input type="text" 
                                                             className="form-control text-grey-500 mb-0 bg-greylight theme-dark-bg border-0"
                                                             placeholder="Search here."
-                                                            onChange={(e) => {
+                                                            onKeyUp={(e) => {
                                                                 setRegex(e.target.value) ; setSearch(e.target.value);
                                                                console.log("regex:", e.target.value);
                                                                getData(search,regex);

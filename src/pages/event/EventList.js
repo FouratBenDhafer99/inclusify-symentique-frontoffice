@@ -7,8 +7,8 @@ import eventAPI from "../../api/eventAPI";
 const EventList = () => {
 
     const [events, setEvents] = useState([])
-    const fn = async (categoryEvent = "",userName = "", regexParam = "", orderBy = "", orderType = "") => {
-        await eventAPI.getEvents(categoryEvent, userName, regexParam, orderBy, orderType).then(res => {
+    const fn = async (categoryEvent = "", regexParam = "", orderBy = "", orderType = "") => {
+        await eventAPI.getEvents(categoryEvent, regexParam, orderBy, orderType).then(res => {
             console.log(res)
             setEvents(res)
         })
